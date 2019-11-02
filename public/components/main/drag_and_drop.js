@@ -13,7 +13,7 @@ import { euiDragDropReorder } from '@elastic/eui';
 
 // import { makeList } from './helper';
 
-export default () => {
+export const DragAndDrop = () => {
   // const [list, setList] = useState(makeList(3));
   const [list, setList] = useState([
     { content: 'item 0', id: '238924759' },

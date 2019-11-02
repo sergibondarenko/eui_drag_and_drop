@@ -19,7 +19,9 @@
   },
   "dependencies": {
     "@elastic/eui": "^14.9.0",
-    "@kbn/i18n": "link:../../packages/kbn-i18n"
+    "@kbn/i18n": "link:../../packages/kbn-i18n",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
   },
   "devDependencies": {
     "@elastic/eslint-config-kibana": "link:../../packages/eslint-config-kibana",

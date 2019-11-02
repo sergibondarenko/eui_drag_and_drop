@@ -10,7 +10,7 @@ import {
   EuiText
 } from '@elastic/eui';
 import { FormattedMessage } from '@kbn/i18n/react';
-import DragAndDrop from './drag_and_drop';
+import { DragAndDrop } from './drag_and_drop';
 
 export class Main extends React.Component {
   constructor(props) {
