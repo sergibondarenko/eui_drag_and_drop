@@ -1,0 +1,8 @@
+{
+  "paths": {
+    "euiDragAndDrop": "./"
+  },
+  "translations": [
+    "translations/zh-CN.json"
+  ]
+}
