@@ -8,7 +8,6 @@ import {
   EuiIcon,
   EuiPanel,
 } from '@elastic/eui';
-
 import { euiDragDropReorder } from '@elastic/eui';
 
 // import { makeList } from './helper';
@@ -20,7 +19,7 @@ export const DragAndDrop = () => {
     { content: 'item 1', id: '198098201' },
     { content: 'item 2', id: '223423990' }
   ]);
-  const onDragEnd = ({ source, destination }, other) => {
+  const onDragEnd = ({ source, destination }) => {
     console.log('my drag and drop -- onDragEnd -- source', source);
     console.log('my drag and drop -- onDragEnd -- destination', destination);
     if (source && destination) {
@@ -37,27 +36,33 @@ export const DragAndDrop = () => {
         withPanel
        >
           <>
-            {list.map(({ content, id }, idx) => (
-              <EuiDraggable
-                spacing="m"
-                key={id}
-                index={idx}
-                draggableId={id}
-                customDragHandle={true}>
-                {provided => (
-                  <EuiPanel paddingSize="m">
-                    <EuiFlexGroup>
-                      <EuiFlexItem grow={false}>
-                        <div {...provided.dragHandleProps}>
-                          <EuiIcon type="grab" />
-                        </div>
-                      </EuiFlexItem>
-                      <EuiFlexItem>{content}</EuiFlexItem>
-                    </EuiFlexGroup>
-                  </EuiPanel>
-                )}
-              </EuiDraggable>
-            ))}
+            {list.map(({ content, id }, idx) => {
+              console.log('my drag and drop -- list map', { content, id }, idx);
+              return (
+                <EuiDraggable
+                  spacing="m"
+                  key={id}
+                  index={idx}
+                  draggableId={id}
+                  customDragHandle={true}>
+                  {provided => {
+                    console.log('my drag and drop -- provided', provided);
+                    return (
+                      <EuiPanel paddingSize="m">
+                        <EuiFlexGroup>
+                          <EuiFlexItem grow={false}>
+                            <div {...provided.dragHandleProps}>
+                              <EuiIcon type="grab" />
+                            </div>
+                          </EuiFlexItem>
+                          <EuiFlexItem>{content}</EuiFlexItem>
+                        </EuiFlexGroup>
+                      </EuiPanel>
+                    );
+                  }}
+                </EuiDraggable>
+              );
+            })}
           </>
       </EuiDroppable>
     </EuiDragDropContext>

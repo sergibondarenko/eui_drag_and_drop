@@ -11,6 +11,7 @@ import {
 } from '@elastic/eui';
 import { FormattedMessage } from '@kbn/i18n/react';
 import { DragAndDrop } from './drag_and_drop';
+import ReactBeautifulDND from './rbdnd_demo';
 
 export class Main extends React.Component {
   constructor(props) {
@@ -28,6 +29,7 @@ export class Main extends React.Component {
       this.setState({ time: resp.data.time });
     });
   }
+
   render() {
     const { title } = this.props;
     return (
@@ -72,6 +74,7 @@ export class Main extends React.Component {
                 </p>
               </EuiText>
               <DragAndDrop />
+              <ReactBeautifulDND />
             </EuiPageContentBody>
           </EuiPageContent>
         </EuiPageBody>
